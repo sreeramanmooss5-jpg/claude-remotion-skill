@@ -8,6 +8,7 @@ import { FocusCatPromo, FTOTAL_S } from "./focuscat/FocusCat";
 import { SkillPromo, TOTAL_S as SKILL_TOTAL_S } from "./skill/SkillPromo";
 import { SelfFix, SELF_TOTAL_F } from "./selffix/SelfFix";
 import { CodeEdit, CE_TOTAL_F } from "./codeedit/CodeEdit";
+import { MoossReel, MOOSS_FPS, MOOSS_TOTAL_F } from "./mooss/MoossReel";
 import { BgMesh, Grade, Grain, Vignette } from "./components/Layers";
 import { Hook } from "./scenes/Hook";
 import { Bio } from "./scenes/Bio";
@@ -58,6 +59,14 @@ const Promo: React.FC = () => {
 
 export const Root: React.FC = () => (
   <>
+    <Composition
+      id="MoossReel"
+      component={MoossReel}
+      durationInFrames={MOOSS_TOTAL_F}
+      fps={MOOSS_FPS}
+      width={1080}
+      height={1920}
+    />
     <Composition
       id="HaidrrrryPromo"
       component={Promo}

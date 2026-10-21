@@ -2,14 +2,16 @@
   "name": "remotion-skill-examples",
   "version": "1.0.0",
   "private": true,
-  "description": "Four finished compositions built with the remotion-motion-graphics skill",
+  "description": "Example compositions built with the remotion-motion-graphics skill",
   "scripts": {
     "audio": "node scripts/gen-sfx.mjs && node scripts/gen-track.mjs",
     "studio": "remotion studio src/index.ts",
     "render:profile": "remotion render src/index.ts HaidrrrryPromo out/profile-promo.mp4 --codec h264 --crf 16",
     "render:focuscat": "remotion render src/index.ts FocusCatPromo out/focus-cat-promo.mp4 --codec h264 --crf 16",
     "render:selffix": "remotion render src/index.ts SelfFix out/self-fix.mp4 --codec h264 --crf 16",
-    "render:codeedit": "remotion render src/index.ts CodeEdit out/code-edit.mp4 --codec h264 --crf 16"
+    "render:codeedit": "remotion render src/index.ts CodeEdit out/code-edit.mp4 --codec h264 --crf 16",
+    "audio:mooss": "node scripts/gen-mooss-vo.mjs && node scripts/gen-mooss-audio.mjs && node scripts/gen-sfx.mjs",
+    "render:mooss": "remotion render src/mooss/index.ts MoossReel videos/mooss-reel-medicine-not-same-for-all.mp4 --codec h264 --crf 17 --audio-codec aac"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.0",

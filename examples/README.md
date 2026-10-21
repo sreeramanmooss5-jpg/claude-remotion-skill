@@ -32,3 +32,23 @@ npx remotion still src/index.ts SelfFix out/check_300.png --frame 300 --overwrit
 
 - `src/theme.ts` (dark tech) and `src/focuscat/theme2.ts` (warm editorial) are the two palettes from `references/design-rules.md`.
 - `src/focuscat/PixelCat.tsx` draws the mascot as a CSS pixel grid; swap the sprite strings to make your own.
+
+## MoossReel — Malayalam health-awareness Reel
+
+`MoossReel` is a 25s 1080×1920 Instagram Reel for Ashtavaidyan Pulamanthole Mooss on the topic
+"ഒരേ ആയുർവേദ മരുന്ന് എല്ലാവർക്കും ഒരുപോലെ ഗുണം ചെയ്യുമോ?". It has Malayalam kinetic type, subtitles,
+voice-over, procedural herbal B-roll (no stock footage, no people) and the client logo.
+
+```bash
+npm run audio:mooss    # needs espeak-ng (with the "ml" voice) and ffmpeg
+npm run render:mooss   # -> videos/mooss-reel-medicine-not-same-for-all.mp4
+```
+
+- Script, scene timing and subtitles live in `src/mooss/timeline.json`.
+- **Brand:** `public/brand/` holds the official logo (`mooss-logo-full.jpg`) and the emblem and
+  wordmark crops. Use `src/brand/MoossBrand.tsx` (`BrandEmblem`, `BrandWordmark`) in every Mooss video.
+- Fonts (Noto Serif Malayalam, Anek Malayalam, Cormorant Garamond, all SIL OFL) are self-hosted in
+  `public/mooss/fonts/`, so the reel renders offline. `src/mooss/index.ts` is a stand-alone entry for that reason.
+- Audio is generated, not downloaded. The voice is espeak-ng synthesis, the tanpura drone and bell are synthesized
+  by `scripts/gen-mooss-audio.mjs`, and the SFX come from `scripts/gen-sfx.mjs`. To use a human voice-over, replace
+  `public/mooss/vo0.wav`…`vo4.wav` and update `src/mooss/vo-durations.json`.
