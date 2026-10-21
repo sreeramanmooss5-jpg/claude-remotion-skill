@@ -3,3 +3,4 @@ node_modules/
 examples/out/
 examples/public/sfx/
 examples/public/mooss/*.wav
+examples/package-lock.json
